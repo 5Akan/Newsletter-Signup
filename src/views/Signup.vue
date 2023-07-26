@@ -1,6 +1,6 @@
 <template>
   <div class="signup">
-    <form @submit= "">
+    <form @submit= "something">
        <label>Email Address</label>
     <p>
       <input type="email" name="" id="input" placeholder="email@company.com">
@@ -17,7 +17,7 @@
 export default {
   name: 'Signup',
   setup(){
-    
+
   }
 }
 </script>
