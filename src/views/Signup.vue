@@ -7,14 +7,25 @@
           <li>Product discovery and building what matters</li>
           <li>Measuring to ensure updates are a success</li>
           <li>And much more!</li>
+         
+            <li>
+               <router-link to="/">
+              iajdegvioj
+             </router-link>
+            </li>
+         
+          
         </div>
         <form @submit.prevent = "verify">
           <label>Email Address</label>
           <p><input type="text" v-model= "email" placeholder="email@company.com"></p>
-          <button :disabled = "!email.length" class="btn">Submit</button>
+           <router-link :to = "{name: 'Congrats'}">
+            <button :disabled = "!email.length" class="btn">Submit</button>
+          </router-link> 
+          
         </form>
     </div>
-      <img src="../assets/signpic.jpg" alt="" srcset="">
+      <img src= "../assets/signpic.jpg" alt="" srcset="">
   </div>
 </template>
 
@@ -27,7 +38,6 @@ export default {
   const email = ref("");
   const regx = ref(/^([a-zA-Z0-9\._])+@([a-zA-Z0-9])+\.([a-z]+)(.[a-z]+)?$/);
   const verify = () => {
-    
     if (regx.value.test(email.value)){
       console.log("Email confirmed");
     }else{     
@@ -96,7 +106,6 @@ h1{
   margin-bottom: 20px;
   font-size: 35px;
 }
-
 .list{
   margin-top: 20px;
 }
@@ -105,16 +114,19 @@ input{
   width: 290px;
   border: none;
   border-radius: 5px 5px;
-    box-shadow: 1px 1px 1px 0 rgba(154, 160, 185, 0.05),
+  position: relative;
+  box-shadow: 1px 1px 1px 0 rgba(154, 160, 185, 0.05),
     1px 1px 15px rgba(0 ,0, 0, 0.3);
 }
 .btn{
   height: 35px;
-  width: 290px;
+  min-width: 290px;
   margin-top: 16px;
   border-radius: 5px 5px;
  background-color: rgb(79, 124, 82);
  color: white;
+  position: relative;
+  margin-right: 12px;
 }
 button :disabled{
   background-color: red;
