@@ -11,16 +11,16 @@
             
         </div>
 
-        <form @submit.prevent = "verify">
+        <form @submit.prevent = "verify" >
           <label>
             Email Address
              <div v-if="error">
               <p class="error">{{error}}</p>
             </div>
           </label>
-          <p><input type="text" v-model= "email" placeholder="email@company.com" ></p>
-            <div v-if= "verify">
-              <button :disabled = "!email.length" class="btn" :class= "{active:isActive}" @click= "isActive = !isActive">Submit</button>
+             <p><input type="text" v-model= "email" placeholder="email@company.com" :class= "inputError ?'inputError':false" @input= "nullForm"></p>
+            <div v-if= "verify"> 
+              <button :disabled = "!email.length" class="btn" >Submit</button>
             </div>
            
             
@@ -28,7 +28,6 @@
     </div>
       <img src= "../assets/signpic.jpg" alt="" srcset="">
      
-       
   </div>
  
 </template>
@@ -45,23 +44,36 @@ export default {
   const regx = ref(/^([a-zA-Z0-9\._])+@([a-zA-Z0-9])+\.([a-z]+)(.[a-z]+)?$/);
   const router = useRouter();
   const error = ref();
-  const isActive = ref(false);
+  const inputError = ref(false);
+
+// const checkinputValidity = () => {
+//   inputError = !verify();
+// }
 
   const verify = () => {
     if (regx.value.test(email.value)){
       // console.log("Email confirmed");
       router.push({name:'congrats'});
-    
+      inputError.value = false;
+     
     }else{     
       //  console.log("Email wrong");
        error.value = "Valid email required"
-       console.log(error.value)
+       console.log(error.value);
+     inputError.value = true;
      
     }
   }
 
+  const nullForm = () => {
+    if(email.value.length === 0){
+      inputError.value = false;
+      error.value = "";
+    }
+    
+  }
   
-  return { email, verify, error, isActive}
+  return { email, verify, error,inputError,nullForm}
   }
 }
 </script>
@@ -135,6 +147,7 @@ input{
   position: inherit;
   box-shadow: 1px 1px 1px 0 rgba(154, 160, 185, 0.05),
     1px 1px 15px rgba(0 ,0, 0, 0.3);
+    cursor: pointer;
 }
 .btn{
   height: 35px;
@@ -145,6 +158,7 @@ input{
   color: white;
   position: inherit;
   margin-right: 12px;
+  cursor: pointer;
 }
 .btn:disabled{
   background-color: rgb(95, 152, 111);
@@ -159,8 +173,10 @@ label .error{
   color: red;
 }
 
-a .router-link-active router-link-exact-active{
+input.inputError{
+    outline: 2px solid red;
+    background: rgba(217, 33, 33, 0.264) ;
+   
+  }
 
-
-}
 </style>
