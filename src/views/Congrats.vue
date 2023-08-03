@@ -1,5 +1,6 @@
 <template>
      <div class="contain">
+       <img src="../assets/icon-success.svg" alt="" srcset="">
       <h1>Thanks for subscribing!</h1>
       <p>
         A confirmation email has been sent to <b>ash@loremcompany.com</b>.

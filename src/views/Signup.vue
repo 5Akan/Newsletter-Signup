@@ -26,7 +26,7 @@
             
         </form>
     </div>
-      <img src= "../assets/signpic.jpg" alt="" srcset="">
+      <img src= "../assets/illustration-sign-up-desktop.svg" alt="" >
      
   </div>
  
@@ -117,7 +117,7 @@ body{
     margin-right: 5px;
   }
   img{
-    width: 295px;
+    /* width: 295px; */
     height: 100%;
     margin-left: 5px;
     margin-right: 5px;
