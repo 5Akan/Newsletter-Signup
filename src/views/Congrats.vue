@@ -22,6 +22,7 @@ export default {
 </script>
 
 <style>
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -81,7 +82,7 @@ button:hover{
   padding: 0;
 }
 
- @media screen and (min-width: 0px) and (max-width:375px){
+ @media screen and (min-width: 0px) and (max-width:767px){
 
    
    body{
