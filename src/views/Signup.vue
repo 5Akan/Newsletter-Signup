@@ -81,8 +81,8 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
-
-*{
+@media screen and (min-width: 768px) and (max-width:1023px){
+  *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -203,8 +203,10 @@ input.inputError{
    
   }
   
+}
+
   /* For Phone */
-  @media screen and (min-width: 0px) and (max-width:375px){
+  @media screen and (min-width: 0px) and (max-width:768px){
 *{
     box-sizing:content-box;
     margin: 0;
@@ -224,6 +226,7 @@ input.inputError{
 .container{
       margin: 0;
       padding: 0px;
+       background-color: white;
       width: 380px;
       height: 950px;
       position: relative;
