@@ -82,7 +82,7 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
 
-@media screen and (min-width: 500px) and (max-width:1440px){
+@media screen and (min-width: 720px) and (max-width:1440px){
   *{
     box-sizing: border-box;
     margin: 0;
@@ -167,7 +167,6 @@ input{
     cursor: pointer;
     padding-left: 12px;
 }
-
 .btn{
   height: 35px;
   width: 270px;
@@ -205,7 +204,150 @@ input.inputError{
   }
   
 }
+ @media screen and (min-width: 425px) and (max-width:720px ){
+   *{
+    box-sizing:content-box;
+    margin: 0;
+    padding: 0;
+  
+}
+   body{
+  background-color: grey;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  max-width: 740px;
+   height: 1288px;
+   position: relative;
 
+}
+.container{
+      margin-top: -230px;
+      margin-left: 50px;
+      padding: 0px;
+       background-color: white;
+      width: 768px;
+      height: 1880px;
+      position: relative;
+      border-radius: 0;
+      display: inline-block;
+      justify-content: center;
+      align-items: center;
+       /* white-space: nowrap;Doesnt allow divs to wrap when the page is reduced */
+        /* display: flex; */
+      flex-direction: column;
+    }
+.writeup{
+     padding: 25px;  
+    width: 720px;
+    height: 700px;
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
+    list-style: none; 
+    /* margin: 10px; */
+    text-align: left;
+    /* width: 40vw;
+    position: relative;
+    font-size: 16px;
+     text-align: left; 
+    margin-left: 5px;
+    margin-right: 5px;
+    */
+  }
+
+  .list{
+  margin-top: 50px;
+  margin-bottom: 100px;
+  font-size: 35px;
+}
+img.list{
+  text-align: left;
+  width: 35px;
+  margin: 0;
+}
+.img1{
+     margin-top: 380px;
+     padding: 0;
+    top: 0%;
+    /* margin-left: 5px;
+    margin-right: 5px; */
+    display: inline-block;
+    width: 770px;
+    }
+.img2{
+      display: none;
+    }
+ p{
+    font-size: 35px;
+    text-align: left;
+    
+  }
+h1{
+  margin-top: 70px;
+  margin-bottom: 90px;
+  font-size: 70px;
+}
+form{
+  position: relative;
+  /* margin-right: 2px; */
+  margin-top: 0px;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  width: 720px;
+  height: 280px;
+  margin-bottom: 30px;
+}
+input{
+   height: 90px;
+  width: 700px;
+  border: none;
+  border-radius: 5px 5px;
+  position: inherit;
+  box-shadow: 1px 1px 1px 0 rgba(154, 160, 185, 0.05),
+    1px 1px 15px rgba(0 ,0, 0, 0.3);
+    cursor: pointer;
+    padding-left: 25px;
+}
+input::placeholder{
+  font-size: 30px;
+}
+
+.btn{
+  height: 90px;
+  width: 700px;
+  margin-top: 16px;
+  border-radius: 5px 5px;
+  background-color: hsl(234, 29%, 20%);
+  color: white;
+  position: relative;
+  margin-right: 12px;
+  cursor: pointer;
+  border: none;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+label{
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 10px;
+}
+label .error{
+  color: red;
+  font-size: 30px;
+  font-weight: 300;
+}
+input.inputError{
+    outline: 2px solid red;
+    background: rgba(217, 33, 33, 0.264) ;
+   
+  }
+
+ }
   /* For Phone */
   @media screen and (min-width: 375px) and (max-width:425px ){
 *{
@@ -322,6 +464,11 @@ label .error{
     font-size: 12px;
     font-weight: 100;
 }
+input.inputError{
+    outline: 2px solid red;
+    background: rgba(217, 33, 33, 0.264) ;
+   
+  }
   }
 @media screen and (min-width: 0px) and (max-width:375px ){
 *{
@@ -353,7 +500,7 @@ label .error{
       align-items: center;
        /* white-space: nowrap;Doesnt allow divs to wrap when the page is reduced */
         /* display: flex; */
-        flex-direction: column;
+      flex-direction: column;
     }
 .writeup{
      padding: 25px;  
@@ -438,6 +585,11 @@ label .error{
     font-size: 12px;
     font-weight: 100;
 }
+input.inputError{
+    outline: 2px solid red;
+    background: rgba(217, 33, 33, 0.264) ;
+   
+  }
   }
 
 </style>
