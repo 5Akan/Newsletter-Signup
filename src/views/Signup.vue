@@ -86,26 +86,33 @@ export default {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    align-items: center center;
+    justify-content: center center;
   
 }
-body{
-  display: flex;
-  flex-direction: column;
+html, body{
+  /* display: flex; */
+  /* flex-direction: column; */
+  display: fill;
+  position: inherit;
   background-color: rgb(72, 76, 131);
-  align-items: center;
+  align-items: center center;
   justify-content: center;
   margin: 0;
+  height: 100%;
+  padding: 20px;
+ 
 }
   .container{
     background-color: white;
     position: relative;
     display: inline-flex;
     padding: 15px;
-    margin-top: 7rem;
+    /* margin-top: 7rem; */
     width: 40rem;
     height: 30rem;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
     text-align: left;
     border-radius: 5%;
   }
@@ -329,7 +336,10 @@ input::placeholder{
   font-size: 30px;
   font-weight: 400;
 }
-
+.btn:hover{
+  background-color: hsl(4, 100%, 67%);
+  border: none;
+}
 label{
   display: flex;
   justify-content: space-between;
@@ -575,6 +585,12 @@ input{
   cursor: pointer;
   border: none;
 }
+
+.btn:hover{
+  background-color: hsl(4, 100%, 67%);
+  border: none;
+}
+
 label{
   display: flex;
   justify-content: space-between;
