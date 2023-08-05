@@ -22,8 +22,8 @@ export default {
 </script>
 
 <style>
-
-*{
+@media screen and (min-width: 500px) and (max-width:1440px){
+  *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -82,7 +82,66 @@ button:hover{
   padding: 0;
 }
 
- @media screen and (min-width: 0px) and (max-width:767px){
+}
+@media screen and (min-width: 375px) and (max-width:500px){
+
+   
+   body{
+   background: white;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 375px;
+   height: 600px;
+   position: relative;
+
+}
+.contain{
+  background-color:white ;
+      margin: 0;
+      padding: 90px 30px 0px 30px;
+      width: 375px;
+      height: 600px;
+      position: relative;
+      border-radius: 0;
+      display: inline-block;
+      justify-content: center;
+      align-items: left;
+      text-align: left;
+       /* white-space: nowrap;Doesnt allow divs to wrap when the page is reduced */
+        /* display: flex; */
+        flex-direction: column;
+    }
+
+ button{
+  height: 50px;
+  width: 320px;
+  margin-top: 16px;
+  border-radius: 5px 5px;
+  background: hsl(234, 29%, 20%);
+  color: white;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  bottom: -30%;
+
+}   
+#img{
+  width: 60px;
+  height: 60px;
+  padding-right: 100px;
+  margin-right: 0;
+  margin-bottom: 25px;
+}
+.p{
+  line-height: 20px;
+  font-size: 14px;
+}
+ }
+
+
+ @media screen and (min-width: 0px) and (max-width:375px){
 
    
    body{
