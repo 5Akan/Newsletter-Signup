@@ -1,5 +1,4 @@
 <template>
-
   <div class="container">
       <img class="img1" src="../assets/illustration-sign-up-mobile.svg">
     <div class="writeup">
@@ -217,8 +216,8 @@ input.inputError{
   margin: 0;
   padding: 0;
   max-width: 740px;
-   height: 1288px;
-   position: relative;
+  height: 1788px;
+  position: relative;
 
 }
 .container{
@@ -227,7 +226,7 @@ input.inputError{
       padding: 0px;
        background-color: white;
       width: 768px;
-      height: 1880px;
+      height: 2020px;
       position: relative;
       border-radius: 0;
       display: inline-block;
@@ -238,9 +237,10 @@ input.inputError{
       flex-direction: column;
     }
 .writeup{
-     padding: 25px;  
+    margin-top: 70px;
+    padding: 25px;  
     width: 720px;
-    height: 700px;
+    height: 900px;
     justify-content: center;
     align-items: center;
     line-height: 30px;
@@ -258,7 +258,7 @@ input.inputError{
 
   .list{
   margin-top: 50px;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
   font-size: 35px;
 }
 img.list{
@@ -267,7 +267,7 @@ img.list{
   margin: 0;
 }
 .img1{
-     margin-top: 380px;
+     margin-top: 230px;
      padding: 0;
     top: 0%;
     /* margin-left: 5px;
@@ -291,12 +291,13 @@ h1{
 form{
   position: relative;
   /* margin-right: 2px; */
-  margin-top: 0px;
+  margin-top: 30px;
   padding: 5px;
+  padding-top: 60px;
   justify-content: center;
   align-items: center;
   width: 720px;
-  height: 280px;
+  height: 400px;
   margin-bottom: 30px;
 }
 input{
