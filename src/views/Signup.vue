@@ -230,7 +230,7 @@ html, body{
   justify-content: center;
   margin: 0;
   padding: 0;
-  height:110vh;
+  height:100%;
   width: 100%;
  
  
@@ -246,8 +246,9 @@ html, body{
   
   }
   .writeup{
-    height: 50vh;
+    height: 70vh;
     width: 100%;
+    padding: 30px;
     position: relative;
     font-size: 16px;
      text-align: left; 
