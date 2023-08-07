@@ -223,14 +223,16 @@ input.inputError{
   
 }
 html, body{
-  display: absolute;
-  position: relative;
+  display: block;
+  position: absolute;
   background-color: rgb(72, 76, 131);
   align-items: center center;
   justify-content: center;
   margin: 0;
   padding: 0;
-  height:100%;
+  height:110vh;
+  width: 100%;
+ 
  
 }
   .container{
@@ -239,12 +241,12 @@ html, body{
     position: relative;
     display: inline-block;
     width: 100%;
-    height: 1648px;
+    height: 100%;
     text-align: left;
   
   }
   .writeup{
-    height: 100%;
+    height: 50vh;
     width: 100%;
     position: relative;
     font-size: 16px;
@@ -276,7 +278,7 @@ img.list{
 form{
   position: relative;
   margin-right: 2px;
-  margin-top: 40px;
+  margin-top: 10px;
   padding: 2px;
   justify-content: center;
   align-items: center;
