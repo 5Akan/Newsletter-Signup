@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style scooped>
-@media screen and (min-width: 500px) and (max-width:1440px){
+/* @media screen and (min-width: 800px) and (max-width:1440px){
   *{
     box-sizing: border-box;
     margin: 0;
@@ -82,7 +82,7 @@ button:hover{
   padding: 0;
 }
 
-}
+} */
 /* @media screen and (min-width: 375px) and (max-width:500px){
 
    

@@ -86,7 +86,7 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
 
-@media screen and (min-width: 376px) and (max-width:1440px){
+@media screen and (min-width: 723px) and (max-width:1440px){
   *{
     box-sizing: border-box;
     margin: 0;
@@ -96,9 +96,7 @@ export default {
   
 }
 html, body{
-  /* display: flex; */
-  /* flex-direction: column; */
-  display: fill;
+  display: flex;
   position: inherit;
   background-color: rgb(72, 76, 131);
   align-items: center center;
@@ -113,11 +111,10 @@ html, body{
     position: relative;
     display: inline-flex;
     padding: 15px;
-    /* margin-top: 7rem; */
+  
     width: 40rem;
     height: 30rem;
-    /* justify-content: center;
-    align-items: center; */
+
     text-align: left;
     border-radius: 5%;
   }
@@ -216,7 +213,7 @@ input.inputError{
   }
   
 }
- @media screen and (max-width:375px ){
+ @media screen and (max-width:722px ){
    *{
     box-sizing: border-box;
     margin: 0;
@@ -226,14 +223,14 @@ input.inputError{
   
 }
 html, body{
-  display: fill;
-  position: inherit;
+  display: absolute;
+  position: relative;
   background-color: rgb(72, 76, 131);
   align-items: center center;
   justify-content: center;
   margin: 0;
-  height: 100%;
- 
+  padding: 0;
+  height:100%;
  
 }
   .container{
@@ -242,7 +239,7 @@ html, body{
     position: relative;
     display: inline-block;
     width: 100%;
-    height: 100%;
+    height: 1648px;
     text-align: left;
   
   }
