@@ -3,7 +3,7 @@
        <img id ="img" src="../assets/icon-success.svg" alt="" srcset="">
       <h1 class="h1">Thanks for subscribing!</h1>
       <p class="p">
-        A confirmation email has been sent to <b>ash@loremcompany.com</b>.
+        A confirmation email has been sent to <b>{{ $route.params.value}}</b>.
         Please open it and click the button inside to confirm your subscription
       </p>
       <router-link to="/">
@@ -21,7 +21,7 @@ export default {
 }
 </script>
 
-<style>
+<style scooped>
 @media screen and (min-width: 500px) and (max-width:1440px){
   *{
     box-sizing: border-box;
@@ -83,7 +83,7 @@ button:hover{
 }
 
 }
-@media screen and (min-width: 375px) and (max-width:500px){
+/* @media screen and (min-width: 375px) and (max-width:500px){
 
    
    body{
@@ -109,8 +109,6 @@ button:hover{
       justify-content: center;
       align-items: left;
       text-align: left;
-       /* white-space: nowrap;Doesnt allow divs to wrap when the page is reduced */
-        /* display: flex; */
         flex-direction: column;
     }
 
@@ -138,10 +136,10 @@ button:hover{
   line-height: 20px;
   font-size: 14px;
 }
- }
+ } */
 
 
- @media screen and (min-width: 0px) and (max-width:375px){
+ /* @media screen and (min-width: 0px) and (max-width:375px){
 
    
    body{
@@ -165,8 +163,6 @@ button:hover{
       display: inline-block;
       justify-content: center;
       align-items: center;
-       /* white-space: nowrap;Doesnt allow divs to wrap when the page is reduced */
-        /* display: flex; */
         flex-direction: column;
     }
 
@@ -193,7 +189,7 @@ button:hover{
   line-height: 20px;
   font-size: 14px;
 }
- }
+ } */
 
 
 </style>

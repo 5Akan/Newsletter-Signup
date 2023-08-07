@@ -20,7 +20,7 @@
               <p class="error">{{error}}</p>
             </div>
           </label>
-             <p><input type="text" v-model= "email" placeholder="email@company.com" :class= "inputError ?'inputError':false" @input= "nullForm"></p>
+             <p><input type="text" v-model= "email" placeholder="email@company.com" :class= "inputError" @input= "nullForm" @blur= "outfocus"></p>
             <div v-if= "verify"> 
               <button :disabled = "!email.length" class="btn" >Subscibe to monthly newsletter</button>
             </div> 
@@ -53,7 +53,7 @@ export default {
   const verify = () => {
     if (regx.value.test(email.value)){
       // console.log("Email confirmed");
-      router.push({name:'congrats'});
+      router.push({name:'congrats', params:{value:email.value}});
       inputError.value = false;
      
     }else{     
@@ -68,12 +68,17 @@ export default {
   const nullForm = () => {
     if(email.value.length === 0){
       inputError.value = false;
+      error.value = "Input Email";
+    }
+  }
+  const outfocus = () =>{
+     if(email.value.length === 0){
+      inputError.value = false;
       error.value = "";
     }
-    
   }
   
-  return { email, verify, error,inputError,nullForm}
+  return { email, verify, error,inputError,nullForm, outfocus}
   }
 }
 </script>
@@ -81,7 +86,7 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
 
-@media screen and (min-width: 720px) and (max-width:1440px){
+@media screen and (min-width: 376px) and (max-width:1440px){
   *{
     box-sizing: border-box;
     margin: 0;
@@ -201,6 +206,7 @@ label{
 
 label .error{
   color: red;
+  font-size: 12px;
 }
 
 input.inputError{
@@ -210,131 +216,109 @@ input.inputError{
   }
   
 }
- @media screen and (min-width: 425px) and (max-width:720px ){
+ @media screen and (max-width:375px ){
    *{
-    box-sizing:content-box;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    align-items: center center;
+    justify-content: center center;
   
 }
-   body{
-  background-color: grey;
+html, body{
+  display: fill;
+  position: inherit;
+  background-color: rgb(72, 76, 131);
+  align-items: center center;
   justify-content: center;
   margin: 0;
-  padding: 0;
-  max-width: 740px;
-  height: 1788px;
-  position: relative;
-
+  height: 100%;
+ 
+ 
 }
-.container{
-      margin-top: -230px;
-      margin-left: 50px;
-      padding: 0px;
-       background-color: white;
-      width: 768px;
-      height: 2020px;
-      position: relative;
-      border-radius: 0;
-      display: inline-block;
-      justify-content: center;
-      align-items: center;
-       /* white-space: nowrap;Doesnt allow divs to wrap when the page is reduced */
-        /* display: flex; */
-      flex-direction: column;
-    }
-.writeup{
-    margin-top: 70px;
-    padding: 25px;  
-    width: 720px;
-    height: 900px;
-    justify-content: center;
-    align-items: center;
-    line-height: 30px;
-    list-style: none; 
-    /* margin: 10px; */
+  .container{
+    margin: 0;
+    background-color: white;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
     text-align: left;
-    /* width: 40vw;
+  
+  }
+  .writeup{
+    height: 100%;
+    width: 100%;
     position: relative;
     font-size: 16px;
      text-align: left; 
+    line-height: 20px;
+    list-style: none;
+  }
+  p{
+    font-size: 16px;
+    text-align: left;
+  }
+  .img1{
+    display: inline-block;
+    width: 100%;
+  }
+  .img2{
+    /* width: 295px; */
+    /* height: 100%;
     margin-left: 5px;
     margin-right: 5px;
-    */
-  }
-
-  .list{
-  margin-top: 50px;
-  margin-bottom: 60px;
-  font-size: 35px;
+    position: relative; */
+    display: none;
 }
 img.list{
   text-align: left;
-  width: 35px;
+  width: 15px;
   margin: 0;
-}
-.img1{
-     margin-top: 230px;
-     padding: 0;
-    top: 0%;
-    /* margin-left: 5px;
-    margin-right: 5px; */
-    display: inline-block;
-    width: 770px;
-    }
-.img2{
-      display: none;
-    }
- p{
-    font-size: 35px;
-    text-align: left;
-    
-  }
-h1{
-  margin-top: 70px;
-  margin-bottom: 90px;
-  font-size: 70px;
 }
 form{
   position: relative;
-  /* margin-right: 2px; */
-  margin-top: 30px;
-  padding: 5px;
-  padding-top: 60px;
+  margin-right: 2px;
+  margin-top: 40px;
+  padding: 2px;
   justify-content: center;
   align-items: center;
-  width: 720px;
-  height: 400px;
-  margin-bottom: 30px;
+}
+h1{
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 35px;
+}
+.list{
+  margin-top: 20px;
 }
 input{
-   height: 90px;
-  width: 700px;
+  height: 35px;
+  width: 270px;
   border: none;
   border-radius: 5px 5px;
   position: inherit;
   box-shadow: 1px 1px 1px 0 rgba(154, 160, 185, 0.05),
     1px 1px 15px rgba(0 ,0, 0, 0.3);
     cursor: pointer;
-    padding-left: 25px;
+    padding-left: 12px;
 }
-input::placeholder{
-  font-size: 30px;
-}
-
 .btn{
-  height: 90px;
-  width: 700px;
+  height: 35px;
+  width: 270px;
   margin-top: 16px;
   border-radius: 5px 5px;
   background-color: hsl(234, 29%, 20%);
   color: white;
-  position: relative;
+  position: inherit;
   margin-right: 12px;
   cursor: pointer;
   border: none;
-  font-size: 30px;
-  font-weight: 400;
+}
+.btn:disabled{
+  background-color:  hsl(234, 29%, 20%);
+  color: #fff;
+  border: none;
 }
 .btn:hover{
   background-color: hsl(4, 100%, 67%);
@@ -343,15 +327,13 @@ input::placeholder{
 label{
   display: flex;
   justify-content: space-between;
-  font-size: 30px;
-  font-weight: 700;
-  margin: 10px;
 }
+
 label .error{
   color: red;
-  font-size: 30px;
-  font-weight: 300;
+  font-size: 12px;
 }
+
 input.inputError{
     outline: 2px solid red;
     background: rgba(217, 33, 33, 0.264) ;
@@ -360,7 +342,7 @@ input.inputError{
 
  }
   /* For Phone */
-  @media screen and (min-width: 375px) and (max-width:425px ){
+  /* @media screen and (min-width: 376px) and (max-width:425px ){
 *{
     box-sizing:content-box;
     margin: 0;
@@ -388,8 +370,6 @@ input.inputError{
       display: inline-block;
       justify-content: center;
       align-items: center;
-       /* white-space: nowrap;Doesnt allow divs to wrap when the page is reduced */
-        /* display: flex; */
         flex-direction: column;
     }
 .writeup{
@@ -400,22 +380,12 @@ input.inputError{
     align-items: center;
     line-height: 30px;
     list-style: none; 
-    /* margin: 10px; */
     text-align: left;
-    /* width: 40vw;
-    position: relative;
-    font-size: 16px;
-     text-align: left; 
-    margin-left: 5px;
-    margin-right: 5px;
-    */
   }
 .img1{
      margin-top: 160px;
      padding: 0;
     top: 0%;
-    /* margin-left: 5px;
-    margin-right: 5px; */
     display: inline-block;
     width: 425px;
     }
@@ -434,7 +404,6 @@ h1{
 }
 form{
   position: relative;
-  /* margin-right: 2px; */
   margin-top: 0px;
   padding: 2px;
   justify-content: center;
@@ -457,11 +426,20 @@ input{
   width: 380px;
   margin-top: 16px;
   border-radius: 5px 5px;
-  background-color: hsl(234, 29%, 20%);
+  background-color: hsl(4, 100%, 67%);
   color: white;
   position: relative;
   margin-right: 12px;
   cursor: pointer;
+  border: none;
+}
+.btn:disabled{
+  background-color:  hsl(234, 29%, 20%);
+  color: #fff;
+  border: none;
+}
+.btn:hover{
+  background-color: hsl(4, 100%, 67%);
   border: none;
 }
 label{
@@ -480,8 +458,8 @@ input.inputError{
     background: rgba(217, 33, 33, 0.264) ;
    
   }
-  }
-@media screen and (min-width: 0px) and (max-width:375px ){
+  } */
+/* @media screen and (min-width: 0px) and (max-width:375px ){
 *{
     box-sizing:content-box;
     margin: 0;
@@ -509,8 +487,7 @@ input.inputError{
       display: inline-block;
       justify-content: center;
       align-items: center;
-       /* white-space: nowrap;Doesnt allow divs to wrap when the page is reduced */
-        /* display: flex; */
+       
       flex-direction: column;
     }
 .writeup{
@@ -521,22 +498,12 @@ input.inputError{
     align-items: center;
     line-height: 30px;
     list-style: none; 
-    /* margin: 10px; */
     text-align: left;
-    /* width: 40vw;
-    position: relative;
-    font-size: 16px;
-     text-align: left; 
-    margin-left: 5px;
-    margin-right: 5px;
-    */
   }
 .img1{
      margin-top: 160px;
      padding: 0;
     top: 0%;
-    /* margin-left: 5px;
-    margin-right: 5px; */
     display: inline-block;
     width: 380px;
     }
@@ -555,7 +522,6 @@ h1{
 }
 form{
   position: relative;
-  /* margin-right: 2px; */
   margin-top: 0px;
   padding: 2px;
   justify-content: center;
@@ -578,7 +544,7 @@ input{
   width: 325px;
   margin-top: 16px;
   border-radius: 5px 5px;
-  background-color: hsl(234, 29%, 20%);
+  background-color: hsl(4, 100%, 67%);
   color: white;
   position: relative;
   margin-right: 12px;
@@ -586,11 +552,15 @@ input{
   border: none;
 }
 
+.btn:disabled{
+  background-color:  hsl(234, 29%, 20%);
+  color: #fff;
+  border: none;
+}
 .btn:hover{
   background-color: hsl(4, 100%, 67%);
   border: none;
 }
-
 label{
   display: flex;
   justify-content: space-between;
@@ -607,6 +577,6 @@ input.inputError{
     background: rgba(217, 33, 33, 0.264) ;
    
   }
-  }
+  } */
 
 </style>
