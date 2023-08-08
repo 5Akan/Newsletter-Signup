@@ -1,5 +1,6 @@
 <template>
-     <div class="contain">
+
+   <div class="contain">
        <img id ="img" src="../assets/icon-success.svg" alt="" srcset="">
       <h1 class="h1">Thanks for subscribing!</h1>
       <p class="p">
@@ -12,35 +13,31 @@
       
   </div>
 
-
 </template>
 
-<script>
-export default {
 
-}
-</script>
 
-<style scooped>
-/* @media screen and (min-width: 800px) and (max-width:1440px){
+<style scoped>
+@media screen and (min-width: 723px) and (max-width:1440px){
   *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-body{
+html,body{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: center center;
+  justify-content: center center;
   margin: 0;
+  height: 100%;
+  background-color:rgb(72, 76, 131);
 }
   .contain{
     background-color: white;
     position: relative;
     display: inline-block;
     padding: 24px 40px 60px 60px;
-    margin-top: 7rem;
     width: 25rem;
     height: 22rem;
     justify-content: center;
@@ -82,16 +79,24 @@ button:hover{
   padding: 0;
 }
 
-} */
-/* @media screen and (min-width: 375px) and (max-width:500px){
+}
 
+@media screen and (max-width:722px){
+   *{
+    box-sizing: border-box;
+    margin: 0 ;
+    padding: 0;
+    align-items: center center;
+    justify-content: center center;
+  
+}
    
    body{
    background: white;
   align-items: center;
   justify-content: center;
   margin: 0;
-  padding: 0;
+  padding: 0 ;
   width: 375px;
    height: 600px;
    position: relative;
@@ -114,8 +119,8 @@ button:hover{
 
  button{
   height: 50px;
-  width: 320px;
-  margin-top: 16px;
+  width: 100%;
+  margin-top: 8.5rem;
   border-radius: 5px 5px;
   background: hsl(234, 29%, 20%);
   color: white;
@@ -126,70 +131,15 @@ button:hover{
 
 }   
 #img{
-  width: 60px;
   height: 60px;
-  padding-right: 100px;
-  margin-right: 0;
-  margin-bottom: 25px;
+  margin-right: 15rem;
+  margin-bottom: 2rem;
+  display: flex;
 }
 .p{
   line-height: 20px;
   font-size: 14px;
 }
- } */
-
-
- /* @media screen and (min-width: 0px) and (max-width:375px){
-
-   
-   body{
-     background: blue;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  width: 375px;
-   height: 600px;
-   position: relative;
-
-}
-.contain{
-      margin: 0;
-      padding: 90px 30px 0px 30px;
-      width: 375px;
-      height: 600px;
-      position: relative;
-      border-radius: 0;
-      display: inline-block;
-      justify-content: center;
-      align-items: center;
-        flex-direction: column;
-    }
-
- button{
-  height: 50px;
-  width: 320px;
-  margin-top: 16px;
-  border-radius: 5px 5px;
-  background: hsl(234, 29%, 20%);
-  color: white;
-  position: relative;
-  cursor: pointer;
-  border: none;
-  bottom: -30%;
-
-}   
-#img{
-  width: 45px;
-  height: 45px;
-  padding: 0;
-  margin-bottom: 25px;
-}
-.p{
-  line-height: 20px;
-  font-size: 14px;
-}
- } */
-
+ }
 
 </style>
