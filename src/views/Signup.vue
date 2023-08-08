@@ -20,7 +20,7 @@
               <p class="error">{{error}}</p>
             </div>
           </label>
-             <p><input type="text" v-model= "email" placeholder="email@company.com" :class= "inputError" @input= "nullForm" @blur= "outfocus"></p>
+             <input class="input" type="text" v-model= "email" placeholder="email@company.com" :class= "inputError" @input= "nullForm" @blur= "outfocus">
             <div v-if= "verify"> 
               <button :disabled = "!email.length" class="btn" >Subscibe to monthly newsletter</button>
             </div> 
@@ -82,8 +82,143 @@ export default {
   }
 }
 </script>
+<style scoped>
+ @media screen and (max-width:722px ){
+   *{
+    box-sizing: border-box;
+    margin: 0 ;
+    padding: 0;
+    align-items: center center;
+    justify-content: center center;
+  
+}
+html, body{
+  display: block;
+  position: relative;
+  background-color: rgb(72, 76, 131);
+  align-items: center center;
+  justify-content: center;
+  margin: 0 ;
+  padding: 0;
+  height:100%;
+  width: 100%;
+}
+  .container{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+  
+  }
+  .writeup{
+    margin: 0;
+    height: 75vh;
+    width: 100%;
+    padding: 30px;
+    position: relative;
+    font-size: 16px;
+     text-align: left; 
+    line-height: 20px;
+    list-style: none;
+  }
+  p{
+    font-size: 16px;
+    text-align: left;
+    /* padding:5vh 00px 5vh 0px ; */
+    /*t l b r  */
+  }
+  .img1{
+    display: flex;
+    top: 0%;
+    padding: 0;
+    position: relative;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+  .img2{
+    /* width: 295px; */
+    /* height: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+    position: relative; */
+    display: none;
+}
+img.list{
+  text-align: left;
+  width: 15px;
+  margin: 0;
+}
+form{
+  position: relative;
+  padding: 4vh 0vh 2vh 0vh;
+  /*t l b r  */
+  justify-content: center;
+  align-items: center;
+  height: 20rem;
+}
+h1{
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 35px;
+}
+.list{
+  line-height: 1.5rem;
+}
+form .input{
+  height: 45px;
+  width: 100%;
+  border: none;
+  border-radius: 5px 5px;
+  position: relative;
+  box-shadow: 1px 1px 1px 0 rgba(154, 160, 185, 0.05),
+    1px 1px 15px rgba(0 ,0, 0, 0.3);
+  cursor: pointer;
+  margin-top:0;
+}
+form .btn{
+  height: 45px;
+  width: 100%;
+  margin-top: 16px;
+  border-radius: 5px 5px;
+  background-color: hsl(4, 100%, 67%);
+  color: white;
+  position: relative;
+  margin-right: 12px;
+  cursor: pointer;
+  border: none;
+}
+.btn:disabled{
+  background-color:  hsl(234, 29%, 20%);
+  color: #fff;
+  border: none;
+}
 
-<style>
+label{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  
+}
+
+label .error{
+  color: red;
+  font-size: 12px;
+}
+
+input.inputError{
+    outline: 2px solid red;
+    background: rgba(217, 33, 33, 0.264) ;
+   
+  }
+
+ }
+</style>
+<style >
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
 
 @media screen and (min-width: 723px) and (max-width:1440px){
@@ -91,8 +226,8 @@ export default {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    align-items: center center;
-    justify-content: center center;
+    align-items:  center;
+    justify-content:  center;
   
 }
 html, body{
@@ -111,7 +246,6 @@ html, body{
     position: relative;
     display: inline-flex;
     padding: 15px;
-  
     width: 40rem;
     height: 30rem;
 
@@ -213,370 +347,6 @@ input.inputError{
   }
   
 }
- @media screen and (max-width:722px ){
-   *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    align-items: center center;
-    justify-content: center center;
-  
-}
-html, body{
-  display: block;
-  position: absolute;
-  background-color: rgb(72, 76, 131);
-  align-items: center center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  height:100%;
-  width: 100%;
- 
- 
-}
-  .container{
-    margin: 0;
-    background-color: white;
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    text-align: left;
-  
-  }
-  .writeup{
-    height: 70vh;
-    width: 100%;
-    padding: 30px;
-    position: relative;
-    font-size: 16px;
-     text-align: left; 
-    line-height: 20px;
-    list-style: none;
-  }
-  p{
-    font-size: 16px;
-    text-align: left;
-  }
-  .img1{
-    display: inline-block;
-    width: 100%;
-  }
-  .img2{
-    /* width: 295px; */
-    /* height: 100%;
-    margin-left: 5px;
-    margin-right: 5px;
-    position: relative; */
-    display: none;
-}
-img.list{
-  text-align: left;
-  width: 15px;
-  margin: 0;
-}
-form{
-  position: relative;
-  margin-right: 2px;
-  margin-top: 10px;
-  padding: 2px;
-  justify-content: center;
-  align-items: center;
-}
-h1{
-  margin-top: 50px;
-  margin-bottom: 20px;
-  font-size: 35px;
-}
-.list{
-  margin-top: 20px;
-}
-input{
-  height: 35px;
-  width: 270px;
-  border: none;
-  border-radius: 5px 5px;
-  position: inherit;
-  box-shadow: 1px 1px 1px 0 rgba(154, 160, 185, 0.05),
-    1px 1px 15px rgba(0 ,0, 0, 0.3);
-    cursor: pointer;
-    padding-left: 12px;
-}
-.btn{
-  height: 35px;
-  width: 270px;
-  margin-top: 16px;
-  border-radius: 5px 5px;
-  background-color: hsl(234, 29%, 20%);
-  color: white;
-  position: inherit;
-  margin-right: 12px;
-  cursor: pointer;
-  border: none;
-}
-.btn:disabled{
-  background-color:  hsl(234, 29%, 20%);
-  color: #fff;
-  border: none;
-}
-.btn:hover{
-  background-color: hsl(4, 100%, 67%);
-  border: none;
-}
-label{
-  display: flex;
-  justify-content: space-between;
-}
 
-label .error{
-  color: red;
-  font-size: 12px;
-}
-
-input.inputError{
-    outline: 2px solid red;
-    background: rgba(217, 33, 33, 0.264) ;
-   
-  }
-
- }
-  /* For Phone */
-  /* @media screen and (min-width: 376px) and (max-width:425px ){
-*{
-    box-sizing:content-box;
-    margin: 0;
-    padding: 0;
-  
-}
-   body{
-  background-color: white;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  max-width: 400px;
-   height: 900px;
-   position: relative;
-
-}
-.container{
-      margin-left: 50px;
-      padding: 0px;
-       background-color: white;
-      width: 430px;
-      height: 950px;
-      position: relative;
-      border-radius: 0;
-      display: inline-block;
-      justify-content: center;
-      align-items: center;
-        flex-direction: column;
-    }
-.writeup{
-     padding: 25px;  
-    width: 375px;
-    height: 400px;
-    justify-content: center;
-    align-items: center;
-    line-height: 30px;
-    list-style: none; 
-    text-align: left;
-  }
-.img1{
-     margin-top: 160px;
-     padding: 0;
-    top: 0%;
-    display: inline-block;
-    width: 425px;
-    }
-.img2{
-      display: none;
-    }
- p{
-    font-size: 16px;
-    text-align: left;
-    
-  }
-h1{
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: 35px;
-}
-form{
-  position: relative;
-  margin-top: 0px;
-  padding: 2px;
-  justify-content: center;
-  align-items: center;
-}
-input{
-  height: 50px;
-  width: 380px;
-  border: none;
-  border-radius: 5px 5px;
-  position: inherit;
-  box-shadow: 1px 1px 1px 0 rgba(154, 160, 185, 0.05),
-    1px 1px 15px rgba(0 ,0, 0, 0.3);
-    cursor: pointer;
-    padding-left: 25px;
-}
-
-.btn{
-  height: 50px;
-  width: 380px;
-  margin-top: 16px;
-  border-radius: 5px 5px;
-  background-color: hsl(4, 100%, 67%);
-  color: white;
-  position: relative;
-  margin-right: 12px;
-  cursor: pointer;
-  border: none;
-}
-.btn:disabled{
-  background-color:  hsl(234, 29%, 20%);
-  color: #fff;
-  border: none;
-}
-.btn:hover{
-  background-color: hsl(4, 100%, 67%);
-  border: none;
-}
-label{
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  font-weight: 800;
-}
-label .error{
-  color: red;
-    font-size: 12px;
-    font-weight: 100;
-}
-input.inputError{
-    outline: 2px solid red;
-    background: rgba(217, 33, 33, 0.264) ;
-   
-  }
-  } */
-/* @media screen and (min-width: 0px) and (max-width:375px ){
-*{
-    box-sizing:content-box;
-    margin: 0;
-    padding: 0;
-  
-}
-   body{
-  background-color: white;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  max-width: 375px;
-   height: 900px;
-   position: relative;
-
-}
-.container{
-      margin: 0;
-      padding: 0px;
-       background-color: white;
-      width: 380px;
-      height: 950px;
-      position: relative;
-      border-radius: 0;
-      display: inline-block;
-      justify-content: center;
-      align-items: center;
-       
-      flex-direction: column;
-    }
-.writeup{
-     padding: 25px;  
-    width: 375px;
-    height: 400px;
-    justify-content: center;
-    align-items: center;
-    line-height: 30px;
-    list-style: none; 
-    text-align: left;
-  }
-.img1{
-     margin-top: 160px;
-     padding: 0;
-    top: 0%;
-    display: inline-block;
-    width: 380px;
-    }
-.img2{
-      display: none;
-    }
- p{
-    font-size: 16px;
-    text-align: left;
-    
-  }
-h1{
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: 35px;
-}
-form{
-  position: relative;
-  margin-top: 0px;
-  padding: 2px;
-  justify-content: center;
-  align-items: center;
-}
-input{
-  height: 50px;
-  width: 325px;
-  border: none;
-  border-radius: 5px 5px;
-  position: inherit;
-  box-shadow: 1px 1px 1px 0 rgba(154, 160, 185, 0.05),
-    1px 1px 15px rgba(0 ,0, 0, 0.3);
-    cursor: pointer;
-    padding-left: 25px;
-}
-
-.btn{
-  height: 50px;
-  width: 325px;
-  margin-top: 16px;
-  border-radius: 5px 5px;
-  background-color: hsl(4, 100%, 67%);
-  color: white;
-  position: relative;
-  margin-right: 12px;
-  cursor: pointer;
-  border: none;
-}
-
-.btn:disabled{
-  background-color:  hsl(234, 29%, 20%);
-  color: #fff;
-  border: none;
-}
-.btn:hover{
-  background-color: hsl(4, 100%, 67%);
-  border: none;
-}
-label{
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  font-weight: 800;
-}
-label .error{
-  color: red;
-    font-size: 12px;
-    font-weight: 100;
-}
-input.inputError{
-    outline: 2px solid red;
-    background: rgba(217, 33, 33, 0.264) ;
-   
-  }
-  } */
 
 </style>
