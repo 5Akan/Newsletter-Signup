@@ -12,7 +12,6 @@
           <li><img class="list" src= "../assets/icon-list.svg">
           And much more!</li>
         </div>
-
         <form @submit.prevent = "verify" >
           <label>
             Email Address

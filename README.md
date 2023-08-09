@@ -1,5 +1,5 @@
 # newsletter-signup
-
+![](../assets/nw/nw1.png)
 ## Project setup
 ```
 npm install
